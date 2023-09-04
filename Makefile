@@ -150,9 +150,12 @@ UPROGS=\
 	$U/_wc\
 	$U/_zombie\
 	$U/_sleep\
-	$U/_helloworld\
 	$U/_pingpong\
-	
+	$U/_primes\
+	$U/_helloworld\
+	$U/_find\
+	$U/_xargs\
+
 ifeq ($(LAB),syscall)
 UPROGS += \
 	$U/_trace\
