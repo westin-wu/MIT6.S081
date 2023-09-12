@@ -1,0 +1,21 @@
+6
+make grade
+...
+$ make qemu-gdb
+trace 32 grep: OK (5.1s)
+== Test trace all grep ==
+$ make qemu-gdb
+trace all grep: OK (0.9s)
+== Test trace nothing ==
+$ make qemu-gdb
+trace nothing: OK (0.9s)
+== Test trace children ==
+$ make qemu-gdb
+trace children: OK (16.4s)
+== Test sysinfotest ==
+$ make qemu-gdb
+sysinfotest: OK (3.5s)
+== Test time ==
+time: OK
+Score: 35/35
+
