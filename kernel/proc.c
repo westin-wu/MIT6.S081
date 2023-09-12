@@ -295,6 +295,9 @@ fork(void)
 
   np->state = RUNNABLE;
 
+    // 子进程复制父进程的 mask
+  np->mask = p->mask;
+
   release(&np->lock);
 
   return pid;
