@@ -120,7 +120,12 @@ found:
     release(&p->lock);
     return 0;
   }
-
+ p->proc_kernel_pagetable = ukvminit();
+  if(p->proc_kernel_pagetable == 0){
+	  freeproc(p);
+	  release(&p->lock);
+	  return 0;
+  }
   // Set up new context to start executing at forkret,
   // which returns to user space.
   memset(&p->context, 0, sizeof(p->context));
@@ -129,7 +134,7 @@ found:
 
   return p;
 }
-
+
 // free a proc structure and the data hanging from it,
 // including user pages.
 // p->lock must be held.
